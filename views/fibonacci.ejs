@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <% function isSquare(num) { %>
+      <% return num > 0 && Math.sqrt(num) % 1 === 0 %>
+    <% } %>
+    <% function isFib(num) { %>
+      <% return isSquare(5* (num * num) - 4) || isSquare(5 * (num * num) + 4) %>
+    <% } %>
+    <% const fibCheck = (isFib(number)) ? 'IS' : 'IS NOT' %>
+    <p>Your number <%= fibCheck %> a fibonacci number!</p>
+  </body>
+</html>

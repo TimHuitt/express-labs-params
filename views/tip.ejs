@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: black;
+      color: white;
+    }
+    .selected {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p>Your total is: <%= total %></p>
+  <h3>Tip:</h3>
+  <% for (let i=0; i <= .3; i+=0.05) { %>
+    <% let percent = i * 100 %>
+    <% if (i > 0) { %> 
+      <% if (tipPercentage == percent) { %>
+        <p class="selected"><%= percent.toFixed() %>%: <%= (i * total).toFixed(2) %></p>
+      <% } else { %>
+        <p><%= percent.toFixed() %>%: <%= (i * total).toFixed(2) %></p>
+      <% } %>
+    <% } %>
+  <% } %>
+</body>
+</html>
